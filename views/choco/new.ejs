@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include("../partials/head.ejs") %>
+
+  <body>
+    <%- include("../partials/header.ejs") %>
+    <main>
+      <div>
+        <form action="/choco" method="post">
+          <fieldset>
+              <legend>Create a New Chocolate</legend>
+            <label>
+              Manufacturer:<input
+                type="text"
+                name="Manuf"
+                placeholder="Enter chocolate maker"
+              />
+            </label>
+            <label>
+              Name:<input
+                type="text"
+                name="Name"
+                placeholder="Enter chocolate's name"
+              />
+            </label>
+            <label>
+                Cocoa Content:<input
+                  type="text"
+                  name="CocoaCont"
+                  placeholder="Enter % cocoa"
+                />
+              </label>
+              <label>
+                Flavor:<input
+                  type="text"
+                  name="Flavor"
+                  placeholder="Is it flavored? Which flavor?"
+                />
+                <label>
+                    Description:<input
+                      type="text"
+                      name="Description"
+                      placeholder="Describe it!"
+                    />
+              </label>
+            
+          </fieldset>
+          <input type="submit" value="create new chocolate" /><br>
+          <a href="/choco/"><button>Back to Main</button></a>
+        </form>
+      </div>
+    </main>
+  </body>
+</html>

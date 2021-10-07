@@ -107,7 +107,7 @@ Choc.remove({}, (err, data) => {
 });
 
 
-
+// Main routes
 
 //localhost:3000
 app.get('/' , (req, res) => {
@@ -121,8 +121,62 @@ app.get("/choco", (req, res) => {
   });
 });
 
+// New route
+app.get("/choco/new", (req, res) => {
+  res.render("choco/new.ejs")
+})
 
-// show route
+// Destroy (Delete => /choco/:id)
+app.delete("/choco/:id", (req, res) => {
+  // get the id from params
+  const id = req.params.id
+  // delete the chocolate
+ Choc.findByIdAndRemove(id, (err, choc) => {
+      // redirect user back to index page
+      res.redirect("/choco")
+  })
+})
+
+
+
+// Update Route, (PUT => /choco/:id)
+app.put("/choco/:id", (req, res) => {
+  // get the id from params
+  const id = req.params.id
+  
+  // update the chocolate
+  Choc.findByIdAndUpdate(id, req.body, {new: true}, (err, choc) => {
+      // redirect user back to main page when chocolate updates 
+      res.redirect("/choco")
+  })
+})
+
+
+
+// Create Route (POST => /choco)
+app.post("/choco", (req, res) => {
+  
+// Create the Chocolate!
+  Choc.create(req.body, (err, choc) => {
+      // redirect the user back to the main fruits page after fruit created
+      res.redirect("/choco")
+  })
+})
+
+// Edit  Route
+// (GET => /fruits/:id/edit)
+app.get("/choco/:id/edit", (req, res) => {
+  // get the id from params
+  const id = req.params.id
+  // get the chocolate from the database
+  Choc.findById(id, (err, choc) => {
+      // render template and send it fruit
+      res.render("choco/edit.ejs", {choc})
+  })
+})
+
+
+// Show route
 app.get("/choco/:id", (req, res) => {
   // get the id from params
   const id = req.params.id

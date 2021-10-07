@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include("../partials/head.ejs") %>
+
+  <body>
+    <%- include("../partials/header.ejs") %>
+    <main>
+      <div>
+        <form action="/choco/<%= choc._id %>?_method=PUT" method="post">
+          <fieldset>
+              <legend>Edit <%= choc.Manuf %></legend>
+            <label>
+              Manufacturer:<input
+                type="text"
+                name="Manuf"
+                value="<%= choc.Manuf %>"
+              />
+            </label>
+            <label>
+              Name:<input
+                type="text"
+                name="Name"
+                value="<%= choc.Name %>"
+              />
+            </label>
+            <label>
+                Cocoa Content:<input
+                type="text"
+                name="CocoaCont"
+                value="<%= choc.CocoaCont %>"
+                />
+              </label>
+              <label>
+                Flavor:<input
+                type="text"
+                name="Flavor"
+                value="<%= choc.Flavor %>"
+                />
+                <label>
+                Description:<input
+                type="text"
+                name="Description"
+                value="<%= choc.Description %>"
+                    />
+              </label>
+            
+          </fieldset>
+          <input type="submit" value="Update this chocolate" /><br>
+          <a href="/choco/"><button>Back to Main</button></a>
+        </form>
+      </div>
+    </main>
+  </body>
+</html>
