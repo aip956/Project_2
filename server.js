@@ -83,6 +83,22 @@ app.use(express.json());// returns middleware that only parses JSON - may or may
 //___________________
 // Routes
 //___________________
+
+app.get('/list/seed', (req, res)=> {
+// array of starter chocolate
+const startChoco = [
+  {Manuf: "Zotter", Name: "Sweet Christmas Greetings", CocoaCont: "70", Flavor: "Hazelnut Praline", Description: "Dark Chocolate 70% filled with hazelnut praline and hazelnut brittle"},
+  {Manuf: "Puchero", Name: "Sourdough Bread Bar", CocoaCont: "60", Flavor: "Sourdough Bread", Description: "This recipe combines the flowery notes of Indian chocolate with sourdough wheat bread. This has a lovely crumbly and crunchy texture. Reminiscent of a crispy rice candy bar."},
+  {Manuf: "Bonnat", Name: "Morenita", CocoaCont: "65", Flavor: "", Description: "Discover Bonnat milk chocolate range with this amazing bar that will allow you to travel in the new taste latitudes."},
+  {Manuf: "Marou", Name: "Lâm Đồng", CocoaCont: "74", Flavor: "", Description: "This cacao thrives at the foot of lush forested hills in Vietnam's central highlands. Lâm Đồng Province's cool mountains yield a mild chocolate, but look alive for traces of prunes, raisins, and espresso. "},
+  {Manuf: "Soma", Name: "Twinkle Bar", CocoaCont: "", Flavor: "", Description: "Caramel is sugar that’s allowed to change, run a little wild. Bless the sweet science that allows this to occur. Soma's caramel chocolate (they named it Caramel AF) melts like butter in your mouth, the taste of slowly caramelized sugars and cooked milk beautifully intermingled. "},
+]
+
+})
+
+
+
+
 //localhost:3000
 app.get('/' , (req, res) => {
   res.send('Hello World!');
