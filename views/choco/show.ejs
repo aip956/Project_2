@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include("../partials/head.ejs") %>
+
+  <body>
+    <%- include("../partials/header.ejs") %>
+    <main>
+      <div>
+
+        <article>
+          <h3>
+            Manufacturer: <%= choc.Manuf %> <br>
+            Name: <%= choc.Name %> <br>
+            Cocoa Content: <%= choc.CocoaCont %>% <br>
+            Flavor: <%= choc.Flavor %> <br>
+            Description: <%= choc.Description %> <br>
+        </h3>
+
+        <!-- Edit Button -->
+        <a href="/choco/<%= choc._id %>/edit"><button>Edit</button></a>
+        
+        <!-- Delete Button -->
+          <form action="/choco/<%= choc._id %>?_method=DELETE" method="POST">
+            <input type="submit" value="Delete"/>
+          </form>
+
+          <a href="/choco/"><button>Back to Main</button></a>
+        </article>
+
+      </div>
+    </main>
+  </body>
+</html>

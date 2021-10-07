@@ -94,7 +94,17 @@ const startChoco = [
   {Manuf: "Soma", Name: "Twinkle Bar", CocoaCont: "", Flavor: "", Description: "Caramel is sugar that’s allowed to change, run a little wild. Bless the sweet science that allows this to occur. Soma's caramel chocolate (they named it Caramel AF) melts like butter in your mouth, the taste of slowly caramelized sugars and cooked milk beautifully intermingled. "},
 ]
 
-})
+// Delete all choco
+Choc.remove({}, (err, data) => {
+  // Seed Starter Choco
+  Choc.create(startChoco,(err, data) => {
+    // send created choco as response to confirm creation
+    res.json(data);
+  }
+  );
+});
+
+});
 
 
 
@@ -104,11 +114,25 @@ app.get('/' , (req, res) => {
   res.send('Hello World!');
 });
 
+// Index Route (Get => /list)
+app.get("/choco", (req, res) => {
+  Choc.find({}, (err, choco) => {
+    res.render("choco/index.ejs", { choco });
+  });
+});
 
 
+// show route
+app.get("/choco/:id", (req, res) => {
+  // get the id from params
+  const id = req.params.id
 
-
-
+  // find the particular fruit from the database
+  Choc.findById(id, (err, choc) => {
+      // render the template with the data from the database
+      res.render("choco/show.ejs", {choc})
+  })
+})
 
 
 //___________________

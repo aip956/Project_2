@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include("../partials/head.ejs") %>
+
+  <body>
+    <%- include("../partials/header.ejs") %>
+    <main>
+      <div>
+        <% for (choc of choco) { %>
+
+        <article>
+          <a href="/choco/<%= choc._id %>">
+            <h2>
+              <%= choc.Manuf %> - <%= choc.Name %>
+            </h2>
+          </a>
+        </article>
+
+        <% } %>
+      </div>
+    </main>
+  </body>
+</html>
