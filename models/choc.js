@@ -1,0 +1,29 @@
+//////////////////////////////////////////////
+// Import Dependencies
+//////////////////////////////////////////////
+const mongoose = require("./connection")
+
+
+////////////////////////////////////////////////
+// Our Models
+////////////////////////////////////////////////
+// pull schema and model from mongoose
+const {Schema, model} = mongoose
+
+// make chocolate schema
+const chocoSchema = new Schema({
+    Manuf: String,
+    Name: String,
+    CocoaCont: Number,
+    Flavor: String,
+    Description: String
+})
+
+// make choc model
+const Choc = model("Choc", chocoSchema)
+
+
+///////////////////////////////////////////////////
+// Export Model
+///////////////////////////////////////////////////
+module.exports = Choc
