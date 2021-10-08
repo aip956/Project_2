@@ -8,7 +8,7 @@ const methodOverride = require('method-override');
 const ChocRouter = require('./controllers/choc')
 
 // Not in Superfruits "complete server.js file"
-const db = mongoose.connection;
+// const db = mongoose.connection;
 //___________________
 //Port
 //___________________
@@ -18,8 +18,7 @@ const PORT = process.env.PORT || 3000;
 //___________________
 
 //___________________
-// How to connect to the database either via heroku or locally; from Heroku Lab
-const MONGODB_URI = process.env.MONGODB_URI;
+
 
 // Connect to Mongo &
 // Fix Depreciation Warnings from Mongoose

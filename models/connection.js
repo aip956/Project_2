@@ -14,6 +14,9 @@ const CONFIG = {
     useNewUrlParser: true,
     useUnifiedTopology: true
   }
+// How to connect to the database either via heroku or locally; from Heroku Lab
+const MONGODB_URI = process.env.MONGODB_URI;
+const db = mongoose.connection;
 // From Heroku Lab
 mongoose.connect(MONGODB_URI , { useNewUrlParser: true, useUnifiedTopology: true}
     );
