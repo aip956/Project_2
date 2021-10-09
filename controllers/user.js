@@ -51,9 +51,13 @@ router.post("/login", (req, res) => {
           req.session.loggedIn = true
           res.redirect("/choco");
         } else {
-          res.send("Wrong Password");
-        //  res.send("<a href="/user/login"><button>Login</button></a>");
-        // <a href="/user/login"><button>Login</button></a>
+  
+       res.send(`<div> Wrong Password, Signup or Login again<br>
+        <a href="/user/signup"><button>Signup</button></a>
+        <a href="/user/login"><button>Login</button></a>
+      </div>`)
+    // res.redirect('/user/signup')
+    // res.redirect('/user/reLogin')
         }
       }
     });
