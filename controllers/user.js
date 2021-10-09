@@ -51,8 +51,9 @@ router.post("/login", (req, res) => {
           req.session.loggedIn = true
           res.redirect("/choco");
         } else {
-          res.send("wrong password");
-
+          res.send("Wrong Password");
+        //  res.send("<a href="/user/login"><button>Login</button></a>");
+        // <a href="/user/login"><button>Login</button></a>
         }
       }
     });
@@ -61,7 +62,7 @@ router.post("/login", (req, res) => {
 router.get("/logout", (req, res) => {
     // destroy session and redirect to main page
     req.session.destroy((err) => {
-        res.redirect("/")
+        res.redirect("/choco")
     })
 })
 //////////////////////////////////////////
