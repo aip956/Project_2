@@ -6,14 +6,10 @@ const express = require('express');
 const morgan = require("morgan") //import morgan
 const methodOverride = require('method-override');
 const ChocRouter = require('./controllers/choc')
+const UserRouter = require('./controllers/user')
+const session = require('express-session');
+const MongoStore = require('connect-mongo');
 
-// Not in Superfruits "complete server.js file"
-// const db = mongoose.connection;
-//___________________
-//Port
-//___________________
-// Allow use of Heroku's port or your own local port, depending on the environment
-const PORT = process.env.PORT || 3000;
 
 //___________________
 
@@ -46,6 +42,14 @@ app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 app.use(express.urlencoded({ extended: false }));// extended: false - does not allow nested objects in query strings; gets req.body
 app.use(express.json());// returns middleware that only parses JSON - may or may not need it depending on your project
 app.use(express.static("public")); // serve files from public statically
+app.use(session({
+  secret: process.env.SECRET,
+  store: MongoStore.create({mongoUrl: process.env.DATABASE_URL}),
+  saveUninitialized: true,
+  resave: false,
+}))
+
+app.use("/user", UserRouter)
 app.use("/choco", ChocRouter)
 
 //___________________
@@ -57,13 +61,19 @@ app.use("/choco", ChocRouter)
 // Main routes
 
 //localhost:3000
-app.get('/' , (req, res) => {
-  res.send('Hello World!');
+
+app.get("/", (req, res) => {
+  res.render("index.ejs")
 });
 
 
 
 
+//___________________
+//Port
+//___________________
+// Allow use of Heroku's port or your own local port, depending on the environment
+const PORT = process.env.PORT || 3000;
 //___________________
 //Listener
 //___________________

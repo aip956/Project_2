@@ -9,6 +9,18 @@ const Choc = require("../models/choc")
 /////////////////////////////////////////
 const router = express.Router()
 
+
+////////////////////////////////////////
+// Router Middleware
+////////////////////////////////////////
+// Authorization Middleware
+router.use((req, res, next) => {
+    if (req.session.loggedIn) {
+      next();
+    } else {
+      res.redirect("/user/login");
+    }
+  });
 /////////////////////////////////////////
 // Routes
 /////////////////////////////////////////
@@ -36,7 +48,7 @@ router.get('/seed', (req, res)=> {
     });
 // Index Route (Get => /list)
 router.get("/", (req, res) => {
-    Choc.find({}, (err, choco) => {
+    Choc.find({username: req.session.username}, (err, choco) => {
       res.render("choco/index.ejs", { choco });
     });
   });
@@ -75,7 +87,8 @@ router.get("/", (req, res) => {
   
   // Create Route (POST => /choco)
   router.post("/", (req, res) => {
-    
+    // add username to req.body to track related user
+  req.body.username = req.session.username
   // Create the Chocolate!
     Choc.create(req.body, (err, choc) => {
         // redirect the user back to the main fruits page after fruit created

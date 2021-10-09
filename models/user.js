@@ -3,28 +3,22 @@
 //////////////////////////////////////////////
 const mongoose = require("./connection")
 
-
 ////////////////////////////////////////////////
-// Our Models
+// Define Model
 ////////////////////////////////////////////////
 // pull schema and model from mongoose
-const {Schema, model} = mongoose
+const { Schema, model } = mongoose;
 
-// make chocolate schema
-const chocoSchema = new Schema({
-    Manuf: String,
-    Name: String,
-    CocoaCont: Number,
-    Flavor: String,
-    Description: String,
-    username: String
-})
+// make choco schema
+const userSchema = new Schema({
+  username: {type: String, required: true, unique: true},
+  password: {type: String, required: true}
+});
 
 // make choc model
-const Choc = model("Choc", chocoSchema)
-
+const User = model("User", userSchema);
 
 ///////////////////////////////////////////////////
 // Export Model
 ///////////////////////////////////////////////////
-module.exports = Choc
+module.exports = User
