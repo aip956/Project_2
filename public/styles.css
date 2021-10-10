@@ -7,7 +7,7 @@ body {
     height: 100vh;
     margin: 0;
     display: grid;
-    place-items: center;
+
     overflow: hidden;
     font-family: Lato;
     
@@ -15,6 +15,10 @@ body {
 
 .cards {
     display: flex;
+    overflow-x: scroll;
+    place-items: center;
+    height: 300px;
+    flex-direction: row;
 }
 
 .card {
@@ -24,6 +28,8 @@ body {
     box-shadow: 4px 4px 15px 2px; 
     transition: 0.2s;
     width: 200px; 
+    height: 150px;
+
     background-image: linear-gradient(to right,rgb(141, 139, 139), rgb(34, 33, 33));
   
 }
@@ -33,7 +39,9 @@ body {
 }
 
 .card:hover {
-    transform: translateY(-1rem);
+    transform: rotate(5deg);
+
+
 }
 
 /* <!-- Adjacent sibling selector --> */
