@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+
+body {
+    color: white;
+    background: black;
+    height: 100vh;
+    margin: 0;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    font-family: Lato;
+    
+}
+
+.cards {
+    display: flex;
+}
+
+.card {
+    color: white;
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: 4px 4px 15px 2px; 
+    transition: 0.2s;
+    width: 200px; 
+    background-image: linear-gradient(to right,rgb(141, 139, 139), rgb(34, 33, 33));
+  
+}
+
+.card:not(:first-child) {
+    margin-left: -4rem;
+}
+
+.card:hover {
+    transform: translateY(-1rem);
+}
+
+/* <!-- Adjacent sibling selector --> */
+/* .card:hover + p {
+   .card {
+        background-color: red;
+        /* transform: translateX(4rem); */
+    /* } */
+/* } */ 

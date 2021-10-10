@@ -2,28 +2,27 @@
 <html lang="en">
     <%- include("../partials/head.ejs") %>
 
-  <body>
+<body>
     <%- include("../partials/header.ejs") %>
-    <main>
-      <div>
+  <main>
+      
        
-        <a href="/choco/new"><button>The World Needs more Chocolate, Create One Here</button></a>
-        
-        <a href="/user/logout"><button>Logout</button></a>
+  <a href="/choco/new"><button>The World Needs more Chocolate, Create One Here</button></a>
+
+  <a href="/user/logout"><button>Logout</button></a>
  
-
-        <% for (choc of choco) { %>
-
-        <article>
-          <a href="/choco/<%= choc._id %>">
-            <h2>
-              <%= choc.Manuf %> - <%= choc.Name %>
-            </h2>
-          </a>
-        </article>
-
-        <% } %>
+  <div class = "cards">
+    <% for (choc of choco) { %>
+      <div class = "card">
+      <article>
+        <a href="/choco/<%= choc._id %>">
+          <h2><%= choc.Manuf %>: <br> </h2>
+          <h3><%= choc.Name %></h3>
+        </a>
+      </article>
       </div>
+        <% } %>
+  </div>
     </main>
   </body>
 </html>
