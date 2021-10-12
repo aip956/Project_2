@@ -30,13 +30,21 @@ body {
     width: 200px; 
     height: 150px;
     background: linear-gradient(85deg,#434343,#262626);
-
+    margin-left: -4rem;
     }; 
     
 
 .card:not(:first-child) {
     margin-left: -4rem;
+    background-color: blue;
+}
+.card:first-child {
     background-color: red;
+    margin-left: 4rem;
+}
+
+div ul:nth-child(n+2) {
+    background-color: #900;
 }
 
 .card:hover {
@@ -61,3 +69,12 @@ a:visited {
 }
 
 
+button {
+    border-radius: 8px;
+  }
+  
+  button:hover {
+  color: white;
+  background-color: black;
+  transition: .2s;
+    }
