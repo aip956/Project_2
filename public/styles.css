@@ -7,31 +7,30 @@ body {
     height: 100vh;
     margin: 0;
     display: grid;
-
-    overflow: hidden;
+    overflow: scroll;
     font-family: Lato;
     
 }
 
 .cards {
     display: flex;
-    overflow-x: scroll;
     place-items: center;
     height: 300px;
     flex-direction: row;
+    overflow-x: scroll;
 }
 
 .card {
     color: white;
-    border-radius: 1rem;
+    border-radius: 16px;
     padding: 2rem;
-    box-shadow: 4px 4px 15px 2px; 
+    box-shadow: -2rem 0 3rem -2rem #000;
     transition: 0.2s;
     width: 200px; 
     height: 150px;
-
-    background-image: linear-gradient(to right,rgb(141, 139, 139), rgb(34, 33, 33));
-  
+    background: linear-gradient(85deg,#434343,#262626);
+    /* background: linear-gradient(to right,rgb(141, 139, 139), rgb(34, 33, 33)); */
+    
 }
 
 .card:not(:first-child) {
@@ -39,10 +38,25 @@ body {
 }
 
 .card:hover {
-    transform: rotate(5deg);
+    transform: translate(-.5rem,-1rem) rotate(
+3deg);
+}
 
+a:link {
+    color: white;
+    background-color: transparent;
+    text-decoration: none;
+  }
+a:hover {
+ 
+    font-size: 23px;
+    transition: .2s;
+}  
+a:visited {
+    color: #f7e5d9;
 
 }
+
 
 /* <!-- Adjacent sibling selector --> */
 /* .card:hover + p {

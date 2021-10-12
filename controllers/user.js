@@ -52,10 +52,12 @@ router.post("/login", (req, res) => {
           res.redirect("/choco");
         } else {
   
-       res.send(`<div> Wrong Password, Signup or Login again<br>
-        <a href="/user/signup"><button>Signup</button></a>
-        <a href="/user/login"><button>Login</button></a>
-      </div>`)
+          res.render("user/reLogin.ejs");
+
+      //  res.send(`<div> Wrong Password, Signup or Login again<br>
+      //   <a href="/user/signup"><button>Signup</button></a>
+      //   <a href="/user/login"><button>Login</button></a>
+      // </div>`)
     // res.redirect('/user/signup')
     // res.redirect('/user/reLogin')
         }
