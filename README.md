@@ -63,6 +63,7 @@ body {
 <!-- Adjacent sibling selector -->
 .card: hover {
     ~ .card {
+        background: red;
         transform: translateX(4rem);
     }
 }

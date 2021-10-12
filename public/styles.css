@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 
+/* Scrolling overlap inspired by https://css-tricks.com/ */
 
 body {
     color: white;
@@ -7,9 +8,9 @@ body {
     height: 100vh;
     margin: 0;
     display: grid;
+    place-items: center;
     overflow: scroll;
-    font-family: Lato;
-    
+    font-family: Lato;  
 }
 
 .cards {
@@ -29,12 +30,13 @@ body {
     width: 200px; 
     height: 150px;
     background: linear-gradient(85deg,#434343,#262626);
-    /* background: linear-gradient(to right,rgb(141, 139, 139), rgb(34, 33, 33)); */
+
+    }; 
     
-}
 
 .card:not(:first-child) {
     margin-left: -4rem;
+    background-color: red;
 }
 
 .card:hover {
@@ -42,14 +44,15 @@ body {
 3deg);
 }
 
+/* Changing the colors of the links */
+
 a:link {
     color: white;
     background-color: transparent;
     text-decoration: none;
   }
 a:hover {
- 
-    font-size: 23px;
+     font-size: 23px;
     transition: .2s;
 }  
 a:visited {
@@ -58,10 +61,3 @@ a:visited {
 }
 
 
-/* <!-- Adjacent sibling selector --> */
-/* .card:hover + p {
-   .card {
-        background-color: red;
-        /* transform: translateX(4rem); */
-    /* } */
-/* } */ 
