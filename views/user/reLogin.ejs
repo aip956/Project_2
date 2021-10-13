@@ -1,4 +1,12 @@
 <!DOCTYPE html>
+<style>
+  .center {
+    display: flex;
+    justify-content: space-evenly;
+    width: 50%;
+    margin: auto;
+  }
+</style>
 <html lang="en">
   <%- include("../partials/head.ejs") %>
 
@@ -6,9 +14,11 @@
     <%- include("../partials/header.ejs") %>
     <main>
       <div>
-        <h1>Wrong password; sign up or log in again</h1>
+        <h2>Wrong password; sign up or log in again</h2>
+        <div class="center">
         <a href="/user/signup"><button>Signup</button></a>
         <a href="/user/login"><button>Login</button></a>
+      </div>
       </div>
     </main>
   </body>

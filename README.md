@@ -1,69 +1,47 @@
-# Project_2
+# Project_2: More Chocolate
 Heroku deployment
 https://dashboard.heroku.com/apps/herappy
 https://herappy.herokuapp.com/
 
-https://www.youtube.com/watch?v=NXtz59SJYfM
-<div class = "cards" >
-<div class="card">
-<h2>Title</h2>
-<p>This is an article and it has some content</p>
-</div>
 
-<div class="card"><h2>Title</h2>
-<p>This is an article and it has some content</p>
-</div>
+https://watch.screencastify.com/v/NKoLWXJXY6Kzmph6YIOL
 
-<div class="card"><h2>Title</h2>
-<p>This is an article and it has some content</p>
-</div>
+Screen captures in ScreenCaps folder
 
-<div class="card"><h2>Title</h2>
-<p>This is an article and it has some content</p>
-</div>
+Project_2 is a full-stack application using Node/Express/MongoDB/Heroku
+It's a simple chocolate tracker. I didn't have time, but in the future would:
+-Make the new and edit pages more like the show page
+-Add search functionality
 
-<div class="card"><h2>Title</h2>
-<p>This is an article and it has some content</p>
-</div>
+Technologies Used:
+JavaScript, HTML, CSS, Node, Express, MongoDB, Heroku
 
-</div>
+Link to Heroku App: https://herappy.herokuapp.com/choco
+(User: cheese, gouda)
 
-css:
-body {
-    background: #777;
-    height: 100vh;
-    margin: 0;
-    display: grid;
-    place-items: center;
-    overflow: hidden;
-}
+https://trello.com/b/qVE6C0GD/project-2
+-My trello board laid out the steps to create the CRUD-functionality, plus icebox items for styling.
+-It also includes some wireframes and a simple ERD (entity relationship diagram)
 
-.cards {
-    display: flex;
-    flex-wrap: wrap;
-}
+2. DEMONSTRATE THE PROJECT
 
-.card {
-    background: white;
-    border-radius: 1rem;
-    padding: 2rem;
-    box-shadow: 4px 4px 15px 2px rgba(black, 0.75); 
-    transition: 0.2s; 
-}
+Login as non-user and see Relogin.ejs
+Login as new user and logout
+Login as cheese, gouda
 
-.card:not(:first-child) {
-    margin-left: -4rem;
+Index page lists the items, and I had fun with the overlapping cards and popout
+Hover on link pops link
+In show page, I can edit and delete
+Edit a card
+Delete a card
+Create a card
+Chocolate schema: models/choc.js
+Favorite ejs template is the index page
+Controller for main model is controllers/choc.js
+Biggest challenge: "Lots of little things"; incorrect links, CSS and sometimes the styling doesn't apply
+Takeaway: I'm glad we got lots of crud practice in, and while the Pokedex was really hard, I applied some of the styling here
 
-}
+Index page overlay cards and popup, inspired here:
+https://www.youtube.com/watch?v=NXtz59SJYfM, https://css-tricks.com/
 
-.card:hover {
-    transform: translateY(-1rem);
-}
 
-<!-- Adjacent sibling selector -->
-.card: hover {
-    ~ .card {
-        background: red;
-        transform: translateX(4rem);
-    }
-}
