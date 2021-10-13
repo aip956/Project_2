@@ -11,9 +11,7 @@
     <%- include("../partials/header.ejs") %>
     <main>
       <div>
-        
         <form action="/choco/<%= choc._id %>?_method=PUT" method="post">
-         
             <article>
               <h3>
               <legend>Edit <%= choc.Manuf %></legend>
@@ -54,7 +52,7 @@
                     />
               </label><br>
               </h3>
-         
+              </article>
               <br>
           <input type="submit" value="Update this chocolate" /><br>
           <a href="/choco/"><button>Back to Main</button></a>

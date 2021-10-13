@@ -1,4 +1,9 @@
 <!DOCTYPE html>
+<style>
+  form {
+    width: 500px;
+  }
+</style>
 <html lang="en">
   <%- include("../partials/head.ejs") %>
 
@@ -7,45 +12,52 @@
     <main>
       <div>
         <form action="/choco" method="post">
-          <fieldset>
+          <article>
+            <h3>
               <legend>Create a New Chocolate</legend>
             <label>
-              Manufacturer:<input
+              <span style="color:burlywood">Manufacturer:<br></span><input
                 type="text"
                 name="Manuf"
                 placeholder="Enter chocolate maker"
               />
-            </label>
+            </label><br>
             <label>
-              Name:<input
+              <span style="color:burlywood">Name:<br></span><input
                 type="text"
                 name="Name"
                 placeholder="Enter chocolate's name"
               />
-            </label>
+            </label><br>
             <label>
-                Cocoa Content:<input
+              <span style="color:burlywood">Cocoa Content:<br><input
                   type="text"
                   name="CocoaCont"
                   placeholder="Enter % cocoa"
                 />
-              </label>
+              </label><br>
               <label>
-                Flavor:<input
+                <span style="color:burlywood">Flavor:<br></span><input
                   type="text"
                   name="Flavor"
                   placeholder="Is it flavored? Which flavor?"
                 />
+              </label><br>
                 <label>
-                    Description:<input
+                  <span style="color:burlywood">Description:<br></span><input
                       type="text"
                       name="Description"
+                      size="40"
                       placeholder="Describe it!"
                     />
-              </label>
+                  </label><br>
             
           </fieldset>
-          <input type="submit" value="create new chocolate" /><br>
+          <br>
+        </h3>
+      </article>
+      <br>
+          <input type="submit" value="Create new chocolate" /><br>
           <a href="/choco/"><button>Back to Main</button></a>
         </form>
       </div>
