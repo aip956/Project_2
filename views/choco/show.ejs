@@ -1,34 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <%- include("../partials/head.ejs") %>
-<style>
-div {
-  line-height: 1.6; 
-}
 
-article {
-    background-color: black;
-    border: 5px solid;
-    border-radius: 10px;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    justify-content: space-around ;
-    width: 80%;
-    padding: 5px 5px 15px 15px;
-}
-button, input {
-  border-radius: 8px;
-}
-
-button:hover, input:hover {
-color: white;
-background-color: black;
-transition: .2s;
-  }
-
-
-</style>
   <body>
     <%- include("../partials/header.ejs") %>
     <main>
@@ -43,6 +16,7 @@ transition: .2s;
             <span style="color:burlywood">Description:</span> <%= choc.Description %> <br>
         </h3>
 <br>
+
 <div class="buttons">
         <!-- Edit Button -->
         <a href="/choco/<%= choc._id %>/edit"><button>Edit</button></a>
@@ -54,6 +28,7 @@ transition: .2s;
 
           <a href="/choco/"><button>Back to Main</button></a>
         </div>
+
         </article>
 
       </div>

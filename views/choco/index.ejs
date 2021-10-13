@@ -1,5 +1,7 @@
 <!DOCTYPE html>
+<style>
 
+</style>
 <html lang="en">
     <%- include("../partials/head.ejs") %>
 
@@ -7,11 +9,11 @@
     <%- include("../partials/header.ejs") %>
   <main>
       
-       
+   <div class="button-box">   
   <a href="/choco/new"><button>The World Needs more Chocolate, Create One Here</button></a>
 
   <a href="/user/logout"><button>Logout</button></a>
- 
+</div> 
   <div class = "cards">
     <% for (choc of choco) { %>
       <div class = "card">
