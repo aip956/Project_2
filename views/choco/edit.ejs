@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <style>
   form {
-    width: 500px;
+    width: 1000px;
+    overflow-wrap: break-word
   }
 </style>
 <html lang="en">
@@ -43,13 +44,14 @@
                 value="<%= choc.Flavor %>"
                 />
               </label><br>
-                  <span style="color:burlywood">Description:<br></span><input
+              <label>
+                  <span style="color:burlywood">Description:<br></span><textarea
                 type="text"
                 name="Description"
-                size="40"
-            
-                value="<%= choc.Description %>"
-                    />
+                size="80"
+                wrap="hard"
+                value=>"<%= choc.Description %>"
+              </textarea>
               </label><br>
               </h3>
               </article>

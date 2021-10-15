@@ -3,15 +3,13 @@ Heroku deployment
 https://dashboard.heroku.com/apps/herappy
 https://herappy.herokuapp.com/
 
-
+Demo:
 https://watch.screencastify.com/v/NKoLWXJXY6Kzmph6YIOL
 
 Screen captures in ScreenCaps folder
 
 Project_2 is a full-stack application using Node/Express/MongoDB/Heroku
-It's a simple chocolate tracker. I didn't have time, but in the future would:
--Make the new and edit pages more like the show page
--Add search functionality
+It's a simple chocolate tracker. 
 
 Technologies Used:
 JavaScript, HTML, CSS, Node, Express, MongoDB, Heroku
@@ -30,7 +28,7 @@ Login as new user and logout
 Login as cheese, gouda
 
 Index page lists the items, and I had fun with the overlapping cards and popout
-Hover on link pops link
+Hover on link pops link; this was inspired/copied!
 In show page, I can edit and delete
 Edit a card
 Delete a card
@@ -40,6 +38,11 @@ Favorite ejs template is the index page
 Controller for main model is controllers/choc.js
 Biggest challenge: "Lots of little things"; incorrect links, CSS and sometimes the styling doesn't apply
 Takeaway: I'm glad we got lots of crud practice in, and while the Pokedex was really hard, I applied some of the styling here
+
+I didn't have time, but in the future would:
+-Make the new and edit pages more like the show page
+-Add search functionality
+
 
 Index page overlay cards and popup, inspired here:
 https://www.youtube.com/watch?v=NXtz59SJYfM, https://css-tricks.com/
